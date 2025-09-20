@@ -1,6 +1,7 @@
 import { useState, useEffect, useParams, useNavigate } from 'react';
 import axios from 'axios';
 import LoadingStatus from './LoadingStatus';
+import StoryGame from './StoryGame';
 
 const API_BASE_URL = '/api';
 
@@ -57,7 +58,11 @@ const StoryLoader = () => {
   }
 
   if (story) {
-    return <div className='story-loader'></div>;
+    return (
+      <div className='story-loader'>
+        <StoryGame story={story} onNewStory={createNewStory} />
+      </div>
+    );
   }
 };
 
