@@ -1,4 +1,5 @@
-import { useState, useEffect, useParams, useNavigate } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LoadingStatus from './LoadingStatus';
 import StoryGame from './StoryGame';
