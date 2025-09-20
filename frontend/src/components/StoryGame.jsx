@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const StoryGame = ({ story, onNewStory }) => {
+function StoryGame({ story, onNewStory }) {
   const [currentNodeId, setCurrentNodeId] = useState(null);
   const [currentNode, setCurrentNode] = useState(null);
   const [options, setOptions] = useState([]);
   const [isEnding, setIsEnding] = useState(false);
-  const [isWinningEnd, setIsWinningEnd] = useState(false);
+  const [isWinningEnding, setIsWinningEnding] = useState(false);
 
   useEffect(() => {
     if (story && story.root_node) {
@@ -20,7 +20,7 @@ const StoryGame = ({ story, onNewStory }) => {
 
       setCurrentNode(node);
       setIsEnding(node.is_ending);
-      setIsWinningEnd(node.is_winning_ending);
+      setIsWinningEnding(node.is_winning_endig);
 
       if (!node.is_ending && node.options && node.options.length > 0) {
         setOptions(node.options);
@@ -50,10 +50,11 @@ const StoryGame = ({ story, onNewStory }) => {
         {currentNode && (
           <div className='story-node'>
             <p>{currentNode.content}</p>
+
             {isEnding ? (
               <div className='story-ending'>
-                <h3>{isWinningEnd ? 'Congratulations' : 'The End'}</h3>
-                {isWinningEnd
+                <h3>{isWinningEnding ? 'Congratulations' : 'The End'}</h3>
+                {isWinningEnding
                   ? 'You reached a winning ending'
                   : 'Your adventure has ended.'}
               </div>
@@ -92,6 +93,6 @@ const StoryGame = ({ story, onNewStory }) => {
       </div>
     </div>
   );
-};
+}
 
 export default StoryGame;
