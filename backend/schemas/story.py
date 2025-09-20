@@ -1,6 +1,12 @@
-# defines the type of data to come into the api and the type of 
-# data that can go out from the api 
-# this is important to do some data validation by FastAPI
+# Schemas define the shape of data coming into your API (request body) and going out from your API (response).
+
+# They also give you automatic validation and documentation.
+
+# Based on these schemas, FastAPI:
+
+# Checks if the incoming request data is valid.
+
+# Automatically converts database objects into clean JSON responses.
 from typing import List, Optional, Dict
 from datetime import datetime
 from pydantic import BaseModel
