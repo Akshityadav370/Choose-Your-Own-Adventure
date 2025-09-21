@@ -22,8 +22,8 @@ class StoryGenerator:
 
         if openai_api_key and serviceurl:
             # asdf
-            return ChatOpenAI(model="gpt-4-mini", api_key=openai_api_key, base_url=serviceurl)
-        return ChatOpenAI(model="gpt-4-mini")
+            return ChatOpenAI(model="gpt-4o-mini", api_key=openai_api_key, base_url=serviceurl)
+        return ChatOpenAI(model="gpt-4o-mini")
 
     @classmethod
     def generate_story(cls, db:Session, session_id: str, theme:str="fantasy") -> Story:
