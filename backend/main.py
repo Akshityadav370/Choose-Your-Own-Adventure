@@ -32,3 +32,8 @@ if __name__ == "__main__":
     # uvicorn: webserver, used to server our FastAPI application
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
+
+# TODO: 
+# 1. use choreo api service
+# 2. setup own database
